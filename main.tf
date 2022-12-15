@@ -4,8 +4,8 @@ resource "aws_rds_cluster" "default" {
   engine                  = var.engine
   engine_version          = var.engine_version
   database_name           = "mydb"
-  master_username         = "local.RDS_USER"
-  master_password         = "local.RDS_PASS"
+  master_username         = local.RDS_USER
+  master_password         = local.RDS_PASS
   skip_final_snapshot  = true
 #  db_cluster_parameter_group_name = "${var.env}-${var.name}-roboshop-rds"
   db_subnet_group_name = "${var.env}-${var.name}-roboshop-rds"
